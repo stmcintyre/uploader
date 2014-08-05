@@ -15,7 +15,7 @@ class Photo < ActiveRecord::Base
   validates_property :format, of: :image, in: [:jpeg, :jpg, :png, :bmp], case_sensitive: false,
                      message: "should be either .jpeg, .jpg, .png, .bmp", if: :image_changed?
 
-  validates_property :width, of: :image, in: (0..400),
+  validates_property :width, of: :image, in: (0..1000),
                            message: proc{ |actual, model| "Unlucky #{model.title} - was #{actual}" }
 
 end
